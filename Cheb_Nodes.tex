@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\draw (-1,0) -- (1,0);
+\draw [smooth,domain=0:180] plot({cos(\x)}, {sin(\x)});
+\foreach \i in {0,...,19} {
+	 \draw [draw=red,fill=red] ({cos(0.5* 9+ \i*9)},{sin(0.5*9+ \i*9)}) circle (0.01);
+	 \draw [dashed, ultra thin] ({cos(0.5* 9+ \i*9)},{sin(0.5*9+ \i*9)}) -- ({cos(0.5* 9+ \i*9)},0);
+	 \draw [draw=blue,fill=blue] ({cos(0.5* 9+ \i*9)},0) circle (0.01);
+	 };
+\end{tikzpicture}
+\end{document}
